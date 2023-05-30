@@ -1,0 +1,6 @@
+Flask
+netCDF4
+numpy
+pandas
+requests
+flask_cors

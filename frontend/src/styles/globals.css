@@ -1,0 +1,48 @@
+body {
+    color: white;
+    background: rgb(37, 134, 150);
+}
+@import "rsuite/dist/rsuite.css";
+
+.rs-stack input{
+  background: white;
+  color: black;
+  height: 40px;
+  border-radius: 5px;
+  border:0;
+  font-weight: bold;
+  font-size: 16px;
+  padding-left: 8px;
+}
+
+
+.gradient-box {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(128, 128, 128, 0.5), rgba(0, 0, 0, 0.5));
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.heat-gradient-box {
+  background: linear-gradient(to right, 
+  rgba(0, 0, 255, 0.5),rgba(0, 255, 0, 0.5),rgba(255, 0, 0, 0.5));
+  /* rgba(255, 255, 255, 1.0), rgba(128, 128, 128, 1.0), rgba(0, 0, 0, 1.0)); */
+        border: 1px solid #ccc;
+        padding: 20px;
+}
+
+.wind-vector-gradient-box{
+  background: linear-gradient(to right,
+  /* rgba(0, 0, 255, 0.5),rgba(0, 255, 0, 0.5),rgba(255, 0, 0, 0.5) */
+     #7491ae, #6abdd4, #91ffff, #39e4ac, 
+    #39e4ac, #acff00, #fcff00, #feff72, #f9da45, 
+    #ff9100, #ff5860, #ff00ff, #de00d3
+    );
+  /* rgba(255, 255, 255, 1.0), rgba(128, 128, 128, 1.0), rgba(0, 0, 0, 1.0)); */
+        border: 1px solid #ccc;
+        padding: 20px;
+}
+
+
+
+
+
