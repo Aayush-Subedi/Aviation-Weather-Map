@@ -10,7 +10,6 @@ In this project, the weather data is obtained through the **Rasdaman server** an
     - [Frontend (Next.js)](#frontend-nextjs)
   - [Usage](#usage)
   - [Portability Considerations](#portability-considerations)
-  - [License](#license)
   - [Project Screenshots](#project-screenshots)
   - [File structure](#file-structure)
 
@@ -19,24 +18,29 @@ In this project, the weather data is obtained through the **Rasdaman server** an
 
 
 ### Prerequisites
-- Node.js (version 20.2.0 or higher)
+- Node.js (version 18.12.1 or higher)
 - Python (version 3.9.6 or higher)
 - pip (Python package installer)
 
 ### Backend (Python Flask)
 
-  1. Clone the repository and navigate to the project directory:
+1. Clone the repository and navigate to the project directory:
      ```shell
-     git clone <repository-url>
-     cd thesis_codes
+     git clone https://github.com/Aayush-Subedi/Aviation-Weather-Map.git
      ```
+     ```shell
+     cd Aviation-Weather-Map
+     ```
+
   2. Navigate to the api directory:
       ```shell
       cd api
       ```
   3. Create and activate a virtual environment:
       ```shell
-      python -m venv venv
+      python3 -m venv venv
+      ```
+      ```shell
       source venv/bin/activate
       ```
   4. Install the required python packages:
@@ -51,32 +55,50 @@ In this project, the weather data is obtained through the **Rasdaman server** an
       ```
   2. Install the dependencies:
       ```shell
+      sudo apt install nodejs npm
+      ```
+      ```shell
       npm install
       ```
+      ```shell
+      sudo npm cache clean -f
+      ```
+      ```shell
+      sudo npm install -g n
+      ```
+      ```shell
+      sudo n stable
+      ```
+  **NOTE:** Create ".env" file inside /frontend and "config.py" file inside /api and insert the credentials.
+
   ## Usage
 
   1. Start the backend server:
      ```shell
       cd ../api
+     ```
+     ```shell
       export FLASK_APP=app.py
+     ```
+     ```shell 
       flask run
-      ```
-  2. Start the frontend server:
+     ```
+**In new terminal:**
+
+  1. Start the frontend server:
       ```shell
       cd ../frontend
+      ```
+      ```shell
       npm run dev
       ```
-  3. Access the application in your browser:
-  Open ```http://localhost:3000``` in your preferred web browser.
+  2. Access the application in your browser:
+  Open  [http://localhost:3000](http://localhost:3000) in your preferred web browser.
 
 
 ## Portability Considerations
 Has been tested on Firefox (113.0.2), Chrome (113.0.5672.126), and Safari (16.4) on Intel Macbook Pro Ventura 13.3.1.
 
-
-## License
-
-Include a statement about the license and terms of use for the project.
 
 ## Project Screenshots
 ![Screenshot 1](screenshots/wind-vector-arrows.png?raw=true)
