@@ -9,7 +9,6 @@ In this project, the weather data is obtained through the **Rasdaman server** an
     - [Backend (Python Flask)](#backend-python-flask)
     - [Frontend (Next.js)](#frontend-nextjs)
   - [Usage](#usage)
-  - [Error Handling](#error-handling)
   - [Portability Considerations](#portability-considerations)
   - [License](#license)
   - [Project Screenshots](#project-screenshots)
@@ -70,9 +69,6 @@ In this project, the weather data is obtained through the **Rasdaman server** an
   3. Access the application in your browser:
   Open ```http://localhost:3000``` in your preferred web browser.
 
-## Error Handling
-
-Explain how errors, exceptions, and edge cases are handled in the project. Document any error messages or error-handling strategies that users may encounter.
 
 ## Portability Considerations
 Has been tested on Firefox (113.0.2), Chrome (113.0.5672.126), and Safari (16.4) on Intel Macbook Pro Ventura 13.3.1.
