@@ -111,11 +111,6 @@ Include a statement about the license and terms of use for the project.
 <!-- *Caption: Temperature* -->
 *Temperature*
 
-<br />
-
-<!-- What I changed: caption, image file names, added ?raw=true, added portability considerations  -->
-<!-- TODO: maybe explain motivation in the beginning or more info about what it is -->
-
 ## File structure
 
 ```
