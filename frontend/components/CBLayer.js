@@ -38,8 +38,26 @@ const CBLayer = ({ tempData }) => {
     if (mapRef.current && tempData && tempData.length > 0) {
       // find the min, max and mean temperature values
       const tempValues = tempData?.map((point) => point.cb_top);
-      const tempMax = Math.max(...tempValues);
-      const tempMin = Math.min(...tempValues);
+      function getMax(arr) {
+        let len = arr.length;
+        let max = -Infinity;
+
+        while (len--) {
+          max = arr[len] > max ? arr[len] : max;
+        }
+        return max;
+      }
+      function getMin(arr) {
+        let len = arr.length;
+        let min = Infinity;
+
+        while (len--) {
+          min = arr[len] < min ? arr[len] : min;
+        }
+        return min;
+      }
+      const tempMax = getMax(tempValues);
+      const tempMin = getMin(tempValues);
       const tempMean =
         tempValues.reduce((acc, val) => acc + val) / tempValues.length;
       setCbLegend({ min: tempMin, mean: tempMean, max: tempMax });
@@ -47,6 +65,7 @@ const CBLayer = ({ tempData }) => {
         features:
           tempData &&
           tempData
+          .filter((_, index) => index % 2 === 0) // only keep every 10th value
             .map((point) => {
               if (point && point.Long && point.Lat && point.cb_top) {
                 // normalize weight value

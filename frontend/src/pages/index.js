@@ -14,9 +14,9 @@ import WindBarbLayer from "../../components/WindBarbsLayer";
 import IcingLayer from "../../components/IcingLayer";
 import CBLayer from "../../components/CBLayer";
 import "react-toastify/dist/ReactToastify.css";
-import WCSIcingLayer from "../../components/WCSIcingLayer";
-import WCSCBLayer from "../../components/WCSCBLayer";
-import WCSTemperatureLayer from "../../components/WCSTempLayer";
+import WCSIcingLayer from "../../components/WCPSIcingLayer";
+import WCSCBLayer from "../../components/WCPSCBLayer";
+import WCSTemperatureLayer from "../../components/WCPSTempLayer";
 import {
   ALL_ALTITUDE_OPTIONS,
   ICING_ALTITUDE_OPTIONS,

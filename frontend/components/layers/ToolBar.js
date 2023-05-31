@@ -11,11 +11,12 @@ function ToolBar({ selectedMap, setSelectedMap }) {
           float: "left",
           paddingTop: "10px",
           paddingBottom: "0px",
+          marginBottom: "4px",
         }}
       >
         <div class="row">
-          <div class="col-sm bg-transparent align-items-center border border-3 border-light rounded">
-            <ul class="nav nav-pills nav-flush mb-auto mx-auto d-flex flex-sm-column flex-column flex-nowrap align-middle align-items-center">
+          <div class="col-sm bg-light align-items-center">
+            <ul class="nav nav-pills nav-flush mb-auto mx-auto d-flex pt-2 flex-sm-column flex-column flex-nowrap align-middle align-items-center">
               <li>
                 <span
                   class="nav-link  px-0"
@@ -30,7 +31,9 @@ function ToolBar({ selectedMap, setSelectedMap }) {
                     class="fa-solid fa-wind"
                     style={{
                       color:
-                        selectedMap === "windvector" ? "yellow" : "#ffffff",
+                        selectedMap === "windvector"
+                          ? "rgb(37, 134, 150)"
+                          : "#000000",
                       cursor: "pointer",
                     }}
                   ></i>
@@ -49,7 +52,10 @@ function ToolBar({ selectedMap, setSelectedMap }) {
                   <i
                     class="fa-solid fa-wind"
                     style={{
-                      color: selectedMap === "windbarb" ? "yellow" : "#ffffff",
+                      color:
+                        selectedMap === "windbarb"
+                          ? "rgb(37, 134, 150)"
+                          : "#000000",
                       cursor: "pointer",
                     }}
                   ></i>
@@ -67,7 +73,10 @@ function ToolBar({ selectedMap, setSelectedMap }) {
                 >
                   <BsSnow
                     style={{
-                      color: selectedMap === "wcs-cb" ? "yellow" : "#ffffff",
+                      color:
+                        selectedMap === "wcs-cb"
+                          ? "rgb(37, 134, 150)"
+                          : "#000000",
                       cursor: "pointer",
                     }}
                   />
@@ -85,7 +94,10 @@ function ToolBar({ selectedMap, setSelectedMap }) {
                 >
                   <BsSnow
                     style={{
-                      color: selectedMap === "wcs-icing" ? "yellow" : "#ffffff",
+                      color:
+                        selectedMap === "wcs-icing"
+                          ? "rgb(37, 134, 150)"
+                          : "#000000",
                       cursor: "pointer",
                     }}
                   />
@@ -103,7 +115,10 @@ function ToolBar({ selectedMap, setSelectedMap }) {
                 >
                   <BsSnow
                     style={{
-                      color: selectedMap === "wcs-temp" ? "yellow" : "#ffffff",
+                      color:
+                        selectedMap === "wcs-temp"
+                          ? "rgb(37, 134, 150)"
+                          : "#000000",
                       cursor: "pointer",
                     }}
                   />
@@ -121,7 +136,8 @@ function ToolBar({ selectedMap, setSelectedMap }) {
                 >
                   <BsCloudsFill
                     style={{
-                      color: selectedMap === "cb" ? "yellow" : "#ffffff",
+                      color:
+                        selectedMap === "cb" ? "rgb(37, 134, 150)" : "#000000",
                       cursor: "pointer",
                     }}
                   />
@@ -139,7 +155,10 @@ function ToolBar({ selectedMap, setSelectedMap }) {
                 >
                   <BsSnow
                     style={{
-                      color: selectedMap === "icing" ? "yellow" : "#ffffff",
+                      color:
+                        selectedMap === "icing"
+                          ? "rgb(37, 134, 150)"
+                          : "#000000",
                       cursor: "pointer",
                     }}
                   />
@@ -159,7 +178,10 @@ function ToolBar({ selectedMap, setSelectedMap }) {
                   <i
                     class="fa-solid fa-temperature-quarter"
                     style={{
-                      color: selectedMap === "heatmap" ? "yellow" : "#ffffff",
+                      color:
+                        selectedMap === "heatmap"
+                          ? "rgb(37, 134, 150)"
+                          : "#000000",
                       cursor: "pointer",
                     }}
                   ></i>
@@ -172,102 +194,126 @@ function ToolBar({ selectedMap, setSelectedMap }) {
               <span
                 class="pt-3"
                 style={{
-                  color: selectedMap === "windvector" ? "yellow" : "#ffffff",
+                  color:
+                    selectedMap === "windvector"
+                      ? "rgb(37, 134, 150)"
+                      : "#000000",
                   cursor: "pointer",
                 }}
                 onClick={() => {
                   setSelectedMap("windvector");
                 }}
               >
-                Wind Arrows
+                WCS-Wind Arrows
               </span>
               <span
                 class=" pt-3"
                 style={{
-                  color: selectedMap === "windbarb" ? "yellow" : "#ffffff",
+                  color:
+                    selectedMap === "windbarb"
+                      ? "rgb(37, 134, 150)"
+                      : "#000000",
                   cursor: "pointer",
                 }}
                 onClick={() => {
                   setSelectedMap("windbarb");
                 }}
               >
-                Wind Barbs
+                WCS-Wind Barbs
               </span>
               <span
                 class=" pt-3"
                 style={{
-                  color: selectedMap === "wcs-cb" ? "yellow" : "#ffffff",
+                  color:
+                    selectedMap === "wcs-cb" ? "rgb(37, 134, 150)" : "#000000",
                   cursor: "pointer",
                 }}
                 onClick={() => {
                   setSelectedMap("wcs-cb");
                 }}
               >
-                W-Cb
+                WCPS-Cb(CM)
               </span>
               <span
                 class=" pt-3"
                 style={{
-                  color: selectedMap === "wcs-icing" ? "yellow" : "#ffffff",
+                  color:
+                    selectedMap === "wcs-icing"
+                      ? "rgb(37, 134, 150)"
+                      : "#000000",
                   cursor: "pointer",
                 }}
                 onClick={() => {
                   setSelectedMap("wcs-icing");
                 }}
               >
-                W-Icing
+                WCPS-Icing(CM)
               </span>
               <span
                 class=" pt-3 text-nowrap"
                 style={{
-                  color: selectedMap === "wcs-temp" ? "yellow" : "#ffffff",
+                  color:
+                    selectedMap === "wcs-temp"
+                      ? "rgb(37, 134, 150)"
+                      : "#000000",
                   cursor: "pointer",
                 }}
                 onClick={() => {
                   setSelectedMap("wcs-temp");
                 }}
               >
-                W-Temperature
+                WCPS-Temperature(CM)
               </span>
               <span
                 class=" pt-3"
                 style={{
-                  color: selectedMap === "cb" ? "yellow" : "#ffffff",
+                  color: selectedMap === "cb" ? "rgb(37, 134, 150)" : "#000000",
                   cursor: "pointer",
                 }}
                 onClick={() => {
                   setSelectedMap("cb");
                 }}
               >
-                Cb
+                WCS-Cb(HM)
               </span>
               <span
                 class=" pt-3"
                 style={{
-                  color: selectedMap === "icing" ? "yellow" : "#ffffff",
+                  color:
+                    selectedMap === "icing" ? "rgb(37, 134, 150)" : "#000000",
                   cursor: "pointer",
                 }}
                 onClick={() => {
                   setSelectedMap("icing");
                 }}
               >
-                Icing
+                WCS-Icing(CM)
               </span>
               <span
                 class=" pt-3"
                 style={{
-                  color: selectedMap === "heatmap" ? "yellow" : "#ffffff",
+                  color:
+                    selectedMap === "heatmap" ? "rgb(37, 134, 150)" : "#000000",
                   cursor: "pointer",
                 }}
                 onClick={() => {
                   setSelectedMap("heatmap");
                 }}
               >
-                Temperature
+                WCS-Temperature(HM)
               </span>
             </ul>
           </div>
+          <div class="border border-1 border-dark rounded mt-2 mb-2"></div>
         </div>
+      </div>
+      <div class="col-sm bg-light text-dark align-items-center mt-2 pe-2 ps-1">
+        <b class="mt-2">CM - ColorMap</b>
+        <br />
+        <b>HM - HeatMap</b>
+        <br />
+        <b>Cb - Cumulonimbus</b>
+        <br />
       </div>
     </>
   );

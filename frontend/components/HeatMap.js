@@ -28,8 +28,8 @@ const HeatMapLayer = ({ tempData }) => {
         }),
       ],
       view: new View({
-        center: fromLonLat([20, 50]),
-        zoom: 4.2,
+        center: fromLonLat([20, 62]),
+        zoom: 4,
       }),
     });
 
@@ -37,8 +37,26 @@ const HeatMapLayer = ({ tempData }) => {
     if (mapRef.current && tempData && tempData.length > 0) {
       // find the min, max and mean temperature values
       const tempValues = tempData?.map((point) => point.t);
-      const tempMax = Math.max(...tempValues);
-      const tempMin = Math.min(...tempValues);
+      function getMax(arr) {
+        let len = arr.length;
+        let max = -Infinity;
+
+        while (len--) {
+          max = arr[len] > max ? arr[len] : max;
+        }
+        return max;
+      }
+      function getMin(arr) {
+        let len = arr.length;
+        let min = Infinity;
+
+        while (len--) {
+          min = arr[len] < min ? arr[len] : min;
+        }
+        return min;
+      }
+      const tempMax = getMax(tempValues);
+      const tempMin = getMin(tempValues);
       const tempMean =
         tempValues.reduce((acc, val) => acc + val) / tempValues.length;
       setHeatlegend({ min: tempMin, mean: tempMean, max: tempMax });
@@ -46,6 +64,7 @@ const HeatMapLayer = ({ tempData }) => {
         features:
           tempData &&
           tempData
+          .filter((_, index) => index % 2 === 0) // only keep every 10th value
             .map((point) => {
               if (point && point.Long && point.Lat && point.t) {
                 // normalize weight value
@@ -72,7 +91,7 @@ const HeatMapLayer = ({ tempData }) => {
       if (!heatmapLayer) {
         heatmapLayer = new Heatmap({
           attributions:
-          'Weather data by <a href="http://www.rasdaman.org/">Rasdaman</a>',
+            'Weather data by <a href="http://www.rasdaman.org/">Rasdaman</a>',
           source: heatmapSource,
           blur: blur,
           radius: radius,

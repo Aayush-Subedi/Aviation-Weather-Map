@@ -25,7 +25,7 @@ export default function WCSCBLayer({ cbImage }) {
       const imageCB = new ImageLayer({
         source: new ImageStatic({
           attributions:
-          'Weather data by <a href="http://www.rasdaman.org/">Rasdaman</a>',
+            'Weather data by <a href="http://www.rasdaman.org/">Rasdaman</a>',
           url: cbImage,
           imageExtent: transformExtent(extent, "EPSG:4326", "EPSG:3857"),
           projection: ovProj,
@@ -83,7 +83,7 @@ export default function WCSCBLayer({ cbImage }) {
           <li>
             <span
               className="legend-color"
-              style={{ backgroundColor: "green" }}
+              style={{ backgroundColor: "rgb(0,255,0)" }}
             ></span>
             &gt;650 m
           </li>
@@ -92,7 +92,14 @@ export default function WCSCBLayer({ cbImage }) {
               className="legend-color"
               style={{ backgroundColor: "blue" }}
             ></span>
-            &gt;500 m
+            &gt;=500 m
+          </li>
+          <li>
+            <span
+              className="legend-color"
+              style={{ backgroundColor: "rgb(255,255,0)" }}
+            ></span>
+            &lt;500 m
           </li>
         </ul>
       </div>

@@ -5,7 +5,6 @@ In this project, the weather data is obtained through the **Rasdaman server** an
 - [Aviation Weather Map](#aviation-weather-map)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
-    - [Prerequisites](#prerequisites)
     - [Backend (Python Flask)](#backend-python-flask)
     - [Frontend (Next.js)](#frontend-nextjs)
   - [Usage](#usage)
@@ -15,12 +14,6 @@ In this project, the weather data is obtained through the **Rasdaman server** an
 
 
 ## Installation
-
-
-### Prerequisites
-- Node.js (version 18.12.1 or higher)
-- Python (version 3.9.6 or higher)
-- pip (Python package installer)
 
 ### Backend (Python Flask)
 
@@ -69,7 +62,7 @@ In this project, the weather data is obtained through the **Rasdaman server** an
       ```shell
       sudo n stable
       ```
-  **NOTE:** Create ".env" file inside /frontend and "config.py" file inside /api and insert the credentials.
+  **NOTE:** Create ".env" file inside /frontend and "config.py" file inside /api by following the format from ".env.example" and "config.example.py" files of the respective folders. Replace the [username] and [password] with the original credential.
 
   ## Usage
 
@@ -101,33 +94,49 @@ Has been tested on Firefox (113.0.2), Chrome (113.0.5672.126), and Safari (16.4)
 
 
 ## Project Screenshots
+
 ![Screenshot 1](screenshots/wind-vector-arrows.png?raw=true)
 <!-- *Caption: Wind Vector Arrows* -->
-*Wind Vector Arrows*
+*Wind Vector Arrows:* The map uses WCS query to fetch the data.
 
 <br />
 
 ![Screenshot 2](screenshots/wind-barbs.png?raw=true)
 <!-- *Caption: Wind Barbs* -->
-*Wind Barbs*
+*Wind Barbs:* The map uses WCS query to fetch the data.
 
 <br />
 
 ![Screenshot 3](screenshots/cb-clouds.png?raw=true)
 <!-- *Caption: Cumulonimbus Clouds* -->
-*Cumulonimbus Clouds*
+*Cumulonimbus Clouds:* The map uses WCPS query to fetch the data.
 
 <br />
 
 ![Screenshot 4](screenshots/icing.png?raw=true)
 <!-- *Caption: Icing* -->
-*Icing*
+*Icing:* The map uses WCPS query to fetch the data.
 
 <br />
 
 ![Screenshot 5](screenshots/temperature.png?raw=true)
 <!-- *Caption: Temperature* -->
-*Temperature*
+*Temperature:* The map uses WCPS query to fetch the data.
+<br />
+
+![Screenshot 6](screenshots/WCS-cb.png?raw=true)
+<!-- *Caption: Temperature* -->
+*Cumulonimbus:* The map uses WCS query to fetch the data.
+<br />
+
+![Screenshot 7](screenshots/WCS-Icing.png?raw=true)
+<!-- *Caption: Temperature* -->
+*Icing:* The map uses WCS query to fetch the data.
+<br />
+
+![Screenshot 8](screenshots/WCS-temp.png?raw=true)
+<!-- *Caption: Temperature* -->
+*Temperature:* The map uses WCS query to fetch the data.
 
 ## File structure
 

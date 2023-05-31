@@ -75,8 +75,26 @@ export default function ColorMapLayer({ tempData }) {
 
       // find the min, max and mean temperature values
       const tempValues = tempData.map((point) => point.t);
-      const tempMax = Math.max(...tempValues);
-      const tempMin = Math.min(...tempValues);
+      function getMax(arr) {
+        let len = arr.length;
+        let max = -Infinity;
+
+        while (len--) {
+          max = arr[len] > max ? arr[len] : max;
+        }
+        return max;
+      }
+      function getMin(arr) {
+        let len = arr.length;
+        let min = Infinity;
+
+        while (len--) {
+          min = arr[len] < min ? arr[len] : min;
+        }
+        return min;
+      }
+      const tempMax = getMax(tempValues);
+      const tempMin = getMin(tempValues);
 
       // create a vector source and layer for the temperature points
       const temperatureSource = new VectorSource({

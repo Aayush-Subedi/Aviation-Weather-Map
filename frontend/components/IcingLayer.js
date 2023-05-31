@@ -18,8 +18,8 @@ export default function IcingLayer({ tempData }) {
 
   function getIcingColor(icingCode = 1) {
     const icingColors = {
-      1: "rgb(0, 128, 0)", // green
-      2: "rgb(255, 165, 0)", // orange
+      1: "rgb(0, 255, 0)", // green
+      2: "rgb(255, 255, 0)", // orange
       3: "rgb(255, 0, 0)", // red
     };
 
@@ -42,24 +42,23 @@ export default function IcingLayer({ tempData }) {
           }),
         ],
         view: new View({
-          center: fromLonLat([55, 60]),
-          zoom: 5,
+          center: fromLonLat([20, 62]),
+          zoom: 4,
         }),
       });
 
       // find the min, max and mean temperature values
       const tempValues = tempData.map((point) => point.t);
-      const tempMax = Math.max(...tempValues);
-      const tempMin = Math.min(...tempValues);
-
+      // const tempMax = Math.max(...tempValues);
+      // const tempMin = Math.min(...tempValues);
       // create a vector source and layer for the temperature points
       const temperatureSource = new VectorSource({
         attributions:
-        'Weather data by <a href="http://www.rasdaman.org/">Rasdaman</a>',
+          'Weather data by <a href="http://www.rasdaman.org/">Rasdaman</a>',
         features:
           tempData &&
           tempData
-            .filter((_, index) => index % 1 === 0) // only keep every 10th value
+            .filter((_, index) => index % 180 === 0) // only keep every 10th value
             .map((point) => {
               if (point && point.Long && point.Lat && point.icing_degree_code) {
                 return new ol.Feature({
@@ -72,23 +71,25 @@ export default function IcingLayer({ tempData }) {
             .filter(Boolean),
       });
 
+      
+
       // create the temperature layer with the dynamic color scale
       const temperatureLayer = new VectorLayer({
         source: temperatureSource,
-        // opacity: 0.8,
+        // opacity: 0.5,
         style: (feature) => {
           const temperature = feature.get("temperature");
           // const color = colorScale(temperature);
           const color = getIcingColor(temperature);
 
           return new Style({
-            image: new CircleStyle({
+            image: new RegularShape({
               fill: new Fill({
                 color: color,
               }),
-              // points: 4, // use 4 points to create a rectangle
-              radius: 5, // half the height and width of the rectangle
-              // angle: Math.PI / 4, // rotate the rectangle 45 degrees
+              points: 6, // use 4 points to create a rectangle
+              radius: 7, // half the height and width of the rectangle
+              angle: Math.PI / 6, // rotate the rectangle 45 degrees
             }),
           });
         },

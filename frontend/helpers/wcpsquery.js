@@ -55,8 +55,8 @@ return
     	(switch
         case $c >= 900		return {red: 255; blue: 0; green: 0;alpha:1000}
         case $c > 650		return {red: 0; blue: 255; green: 0;alpha:1000}
-        case $c > 500		return {red: 0; blue:0; green: 255;alpha:1000}
-        default				return {red: 255; blue: 255; green: 255;alpha:0}
+        case $c >= 500		return {red: 0; blue:0; green: 255;alpha:1000}
+        default				return {red: 255; blue: 255; green: 0;alpha:0}
         )[$var],
     	"image/png"
     )

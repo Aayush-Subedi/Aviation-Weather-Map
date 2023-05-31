@@ -59,11 +59,11 @@ export default function WindBarbLayer({ windData }) {
 
             style: function (feature) {
               const zoomLevel = map.getView().getZoom();
-              if (zoomLevel < 3.7) {
-                printValue.current = 10000;
+              if (zoomLevel < 4.2) {
+                printValue.current = 5400;
                 setZoomValue(zoomLevel);
-              } else if (zoomLevel >= 3.7) {
-                printValue.current = 2000;
+              } else if (zoomLevel >= 4.2) {
+                printValue.current = 1000;
                 setZoomValue(zoomLevel);
               }
               const wind = feature.get("wind");
